@@ -11,4 +11,10 @@ public class SwimmingCoach implements Coach {
 		return "Practice the backstroke for 20 minutes";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
