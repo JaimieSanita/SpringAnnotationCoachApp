@@ -5,21 +5,24 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
-	
+	@Autowired
 	private FortuneService fortuneService;
+	//Spring constructs  class by calling constructor
+	//Spring inject fortuneService into class using Java Reflection
+	
+	
 	//define default, no-arg constructor
 	public TennisCoach() {
 		System.out.println(">>Tennis Coach: inside default constructor");
 	}
 	
-	//define setter method
+	/*
 	@Autowired
-	public void setFortuneService(FortuneService theFortuneService) {
-		System.out.println(">>Tennis Coach: inside setter method.");
+	public void doSomeCrazyStuff(FortuneService theFortuneService) {
+		System.out.println(">>Tennis Coach: inside doSomeCrazyStuff method.");
 		fortuneService = theFortuneService;
 	}
 	
-	/*
 	@Autowired //spring will scan for component that implements fortuneService interface ex. happyFortuneService 
 	public TennisCoach(FortuneService theFortuneService) {
 		fortuneService = theFortuneService;
