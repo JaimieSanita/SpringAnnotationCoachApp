@@ -7,11 +7,24 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 	
 	private FortuneService fortuneService;
+	//define default, no-arg constructor
+	public TennisCoach() {
+		System.out.println(">>Tennis Coach: inside default constructor");
+	}
 	
+	//define setter method
+	@Autowired
+	public void setFortuneService(FortuneService theFortuneService) {
+		System.out.println(">>Tennis Coach: inside setter method.");
+		fortuneService = theFortuneService;
+	}
+	
+	/*
 	@Autowired //spring will scan for component that implements fortuneService interface ex. happyFortuneService 
 	public TennisCoach(FortuneService theFortuneService) {
-		this.fortuneService = theFortuneService;
+		fortuneService = theFortuneService;
 	}
+	*/
 
 	@Override
 	public String getDailyWorkout() {
